@@ -73,7 +73,7 @@ USER devuser
 
 CMD \
 	# npm ci -d && npm run build && \
-	rm -rf vendor && rm -rf var/cache && rm -rf var/log && rm -rf public/assets && rm -rf public/bundles && rm -rf public/thumbs/* && \
+	# rm -rf vendor && rm -rf var/cache && rm -rf var/log && rm -rf public/assets && rm -rf public/bundles && rm -rf public/thumbs/* && \
 	composer install --prefer-dist --no-progress --no-suggest && \
 	composer clear-cache && \
 	apache2-foreground
