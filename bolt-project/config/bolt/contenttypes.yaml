@@ -274,6 +274,19 @@ productos:
             placeholder: "Coloque un título de producto"
             group: Info
             required: true
+        image:
+            type: image
+            label: Imagen
+            alt: false
+            required: true
+        image_hover:
+            type: image
+            label: Imagen alternativa (hover) - Opcional
+            alt: false
+            required: false
+        slug:
+            type: slug
+            uses: [title]
         features:
             type: collection
             label: "Características"
@@ -286,28 +299,38 @@ productos:
                             type: text
                             label: "Título"
                             variant: inline
+                            required: true
                         description:
                             type: textarea
                             label: "Descripción"
                             variant: inline
+                            required: true
+            group: "Características"
+            required: true
+        gallery:
+            type: collection
+            label: "Galería"
+            fields:
+                image:
+                    type: image
+                    label: "Imagen"
+                    alt: false
+            required: true
         price:
             type: number
             mode: float
-            step: 0.1
+            step: 0.01
             placeholder: "Coloque el precio"
             label: Precio
-        image:
-            type: image
-            label: Imagen
-        slug:
-            type: slug
-            uses: [title]
+            variant: inline
+            default: 100
+            required: true
     show_on_dashboard: true
     taxonomy: etiquetas
     viewless: false
     default_status: published
     searchable: false
-    order: title
+    order: id
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
 # Possible field types:
