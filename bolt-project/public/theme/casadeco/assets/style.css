@@ -8322,6 +8322,7 @@ p.wp-caption-text {
 .product .product-image {
 	position: relative;
 	overflow: hidden;
+	border-radius: .5rem;
 }
 
 .product-image > a,
