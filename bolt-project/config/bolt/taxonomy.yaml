@@ -34,5 +34,5 @@ etiquetas:
     behaves_like: tags
     postfix: "Agrega algunas etiquetas de forma libre. Comienza una nueva etiqueta escribiendo una coma o un espacio."
     allow_spaces: false
-    #listing_template: tag-listing.twig #custom template
+    # listing_template: listing.twig #custom template
     required: true

@@ -1,4 +1,4 @@
-{# {% dump(records|length) %} #}
+{% dump(records) %}
 
 
 <!-- Content
@@ -66,7 +66,7 @@
             <div id="shop" class="shop row gutter-30 col-mb-30 mt-3">
 
                 {% for record in records %}
-                {% dump(record) %}
+                {# {% dump(record) %} #}
                 <!-- Product 1 -->
                 <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
                     <div class="grid-inner">
@@ -91,10 +91,10 @@
                         <div class="product-desc">
                             <div class="product-title mb-0">
                                 <h4 class="mb-0">
-                                    <a class="fw-medium" href="demo-furniture-single.html">Light Grey Sofa</a>
+                                    <a class="fw-medium" href="demo-furniture-single.html">{{ record|title }}</a>
                                 </h4>
                             </div>
-                            <h5 class="product-price fw-normal">$799.99</h5>
+                            <h5 class="product-price fw-normal">${{ record.price }}</h5>
                         </div>
                     </div>
                 </div>
@@ -304,9 +304,10 @@
             <div class="clear"></div>
 
             <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center mt-4">
+            {{ pager(records, template='pager.twig') }}
+                {# <ul class="pagination justify-content-center mt-4">
                     <li class="page-item active" aria-current="page">
-                        <span class="page-link">1</span>
+                        <a class="page-link">1</a>
                     </li>
                     <li class="page-item">
                         <a class="page-link" href="#">2</a>
@@ -317,7 +318,7 @@
                     <li class="page-item">
                         <a class="page-link" href="#">Next</a>
                     </li>
-                </ul>
+                </ul> #}
             </nav>
 
         </div>
