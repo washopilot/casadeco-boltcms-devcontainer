@@ -1,6 +1,5 @@
 {% dump(tag_cloud()) %}
 
-
 <!-- Content
 ============================================= -->
 <section id="content">
@@ -35,13 +34,16 @@
                 <div class="col-auto mb-4 d-flex">
 
                     <div class="dropdown sortbuttons">
-                        <button class="button button-border m-0 button-dark border-width-1 border-default nott ls0 fw-normal h-bg-color dropdown-toggle" type="button" id="catButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Category</button>
+                        <button class="button button-border m-0 button-dark border-width-1 border-default nott ls0 fw-normal h-bg-color dropdown-toggle" type="button" id="catButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Escoger Categoría</button>
                         <div class="dropdown-menu py-0 border-default rounded-0" aria-labelledby="catButton">
-                            <a class="dropdown-item" href="#">Sofa Full Set</a>
+                            {# <a class="dropdown-item" href="#">Sofa Full Set</a>
                             <a class="dropdown-item" href="#">Single Seater</a>
                             <a class="dropdown-item" href="#">Recliner</a>
                             <a class="dropdown-item" href="#">Sofa Cum Bed</a>
-                            <a class="dropdown-item" href="#">BeanBag</a>
+                            <a class="dropdown-item" href="#">BeanBag</a> #}
+                            {% for etiqueta in tag_cloud() %}
+                                <a class="dropdown-item" href="/etiquetas/{{ etiqueta.slug }}">{{ etiqueta.name }}</a>
+                            {% endfor %}
                         </div>
                     </div>
 
