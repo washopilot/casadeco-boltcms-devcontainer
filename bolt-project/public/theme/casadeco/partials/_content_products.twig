@@ -42,7 +42,7 @@
                             <a class="dropdown-item" href="#">Sofa Cum Bed</a>
                             <a class="dropdown-item" href="#">BeanBag</a> #}
                             {% for etiqueta in tag_cloud() %}
-                                <a class="dropdown-item" href="/etiquetas/{{ etiqueta.slug }}">{{ etiqueta.name }}</a>
+                            <a class="dropdown-item" href="{{ path('taxonomy', { 'taxonomyslug': 'etiquetas', 'slug': etiqueta.slug}) }}">{{ etiqueta.name }}</a>
                             {% endfor %}
                         </div>
                     </div>
