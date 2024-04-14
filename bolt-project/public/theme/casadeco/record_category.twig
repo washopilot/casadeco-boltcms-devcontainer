@@ -1,10 +1,8 @@
-{% dump(record.contenttype) %}
-
-
 {% extends 'partials/_master.twig' %}
 
 {% block main %}
 
+    {% include 'partials/_content_items.twig' with { content: record } %}
 
 
 {% endblock main %}
