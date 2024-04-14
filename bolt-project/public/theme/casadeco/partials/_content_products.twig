@@ -1,4 +1,5 @@
-{% dump(tag_cloud()) %}
+{% setcontent categories = 'categorias'%}
+
 
 <!-- Content
 ============================================= -->
@@ -20,17 +21,6 @@
                 </div>
         		{% endif %}
                 
-                {% if taxonomy is defined %}
-                <div class="col-auto mb-4">
-                    <h3 class="fw-medium h1">Resultados de: 
-                        <span data-animate="svg-underline-animated" class="svg-underline nocolor">
-                            {# <span>All Products</span> #}
-                            <span>{{ taxonomy.options[slug]|default(slug)|capitalize }}</span>
-                        </span>
-                    </h3>
-                </div>
-        		{% endif %}
-
                 <div class="col-auto mb-4 d-flex">
 
                     <div class="dropdown sortbuttons">
@@ -41,8 +31,8 @@
                             <a class="dropdown-item" href="#">Recliner</a>
                             <a class="dropdown-item" href="#">Sofa Cum Bed</a>
                             <a class="dropdown-item" href="#">BeanBag</a> #}
-                            {% for etiqueta in tag_cloud() %}
-                            <a class="dropdown-item" href="{{ path('taxonomy', { 'taxonomyslug': 'etiquetas', 'slug': etiqueta.slug}) }}">{{ etiqueta.name }}</a>
+                            {% for category in categories %}
+                            <a class="dropdown-item" href="{{ path('record', {'contentTypeSlug': 'categorias', 'slugOrId': category.slug }) }}">{{ category|title|capitalize }}</a>
                             {% endfor %}
                         </div>
                     </div>
