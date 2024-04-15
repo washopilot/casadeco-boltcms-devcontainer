@@ -20,12 +20,16 @@
 
     <!-- Categories -->
     <div class="row item-categories gutter-20">
+        {% set loop_limit = 6 %}
         {% for category in categories %}
-        <div class="col-lg-4 col-md-6">
-            <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{ category|image|thumbnail(640, 480, fit='crop') }}') no-repeat center center; background-size: cover; height: 340px;">
-                <h5 class="text-uppercase ls1 bg-white mb-0">{{ category|title }}</h5>
-            </a>
-        </div>
+            {% if loop.index > loop_limit %}
+                {% break %}
+            {% endif %}
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ path('record', {'contentTypeSlug': 'categorias', 'slugOrId': category.slug }) }}" class="d-block h-op-09 op-ts" style="background: url('{{ category|image|thumbnail(640, 480, fit='crop') }}') no-repeat center center; background-size: cover; height: 340px;">
+                    <h5 class="text-uppercase ls1 bg-white mb-0">{{ category|title }}</h5>
+                </a>
+            </div>
         {% endfor %}
 
         {# <div class="col-lg-4 col-md-6">
