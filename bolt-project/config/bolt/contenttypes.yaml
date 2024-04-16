@@ -11,7 +11,7 @@ homepage:
         title:
             type: text
             class: large
-            group: content
+            group: Generales
             label: Title
             postfix: |
                 The 'Homepage' can contain basic information about the website. This title will be
@@ -30,6 +30,51 @@ homepage:
             placeholder: "contentType/slug or https://example.org/"
             postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
             fixture_format: "{url}"
+
+        sections_home:
+            type: collection
+            group: Secciones
+            label: Secciones
+            fields:
+                hero_section:
+                    type: set
+                    label: "Sección Portada"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        title:
+                            type: text
+                            variant: inline
+                            label: Texto_1
+                        subtitle:
+                            type: text
+                            variant: inline
+                            label: Texto_2
+                        underline:
+                            type: text
+                            variant: inline
+                            label: Texto_3
+                        image_bk:
+                            type: image
+                            label: 'Imagen Fondo'
+                            alt: false
+                        button_title:
+                            type: text
+                            variant: inline
+                            label: 'Mensaje en botón'
+                            postfix: |
+                                Dejar en blanco para no mostrar botón
+                        button_link:
+                            type: text
+                            label: 'Enlace en botón'
+                            variant: inline
+                            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+                    default:
+                        visible: 1
+
         slug:
             type: slug
             uses: title

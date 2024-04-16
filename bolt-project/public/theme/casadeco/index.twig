@@ -2,8 +2,15 @@
 
 {% block main %}
 
-    {% include 'partials/_hero.twig' %}
+    {% for section in record.sections_home %}
 
-    {% include 'partials/_content.twig' %}
+        {% if section.name == 'hero_section' %}
+            {% include 'partials/_hero.twig' with { content: section } %}
+        {% endif %}
+
+        {% include 'partials/_content.twig' with { section: section } %}
+
+    {% endfor %}
+
 
 {% endblock main %}
