@@ -1,3 +1,6 @@
+{% setcontent settings = 'ajustes' %}
+{% set current_path = app.request.pathinfo %}
+
 <!-- Header
 ============================================= -->
 <header id="header" class="header-size-sm border-bottom-0">
@@ -9,8 +12,8 @@
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="mx-auto col-auto flex-column order-2">
-                    <a href="/" class="standard-logo"><img src="{{ asset('assets/demos/furniture/images/logo.png') }}" alt="Canvas Logo"></a>
-                    <a href="/" class="retina-logo"><img src="{{ asset('assets/demos/furniture/images/logo@2x.png') }}" alt="Canvas Logo"></a>
+                    <a href="/" class="standard-logo"><img src="{{ settings.logo|thumbnail(275, 200, fit='crop') }}" alt="{{ settings.logo.alt|default() }}"></a>
+                    {# <a href="/" class="retina-logo"><img src="{{ asset('assets/demos/furniture/images/logo@2x.png') }}" alt="Canvas Logo"></a> #}
                 </div>
                 <!-- #logo end -->
 
@@ -19,7 +22,7 @@
 
                     <!-- Top Search
                     ============================================= -->
-                    <div id="top-search" class="header-misc-icon">
+                    {# <div id="top-search" class="header-misc-icon">
                         <a href="#" id="top-search-trigger">
                             <i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--themecolor)" viewbox="0 0 256 256">
@@ -39,12 +42,12 @@
                                 </svg>
                             </i>
                         </a>
-                    </div>
+                    </div> #}
                     <!-- #top-search end -->
 
                     <!-- Top Cart
                     ============================================= -->
-                    <div id="top-cart" class="header-misc-icon">
+                    {# <div id="top-cart" class="header-misc-icon">
                         <a href="#" class="side-panel-trigger">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--themecolor)" viewbox="0 0 256 256">
                                 <rect width="256" height="256" fill="none"></rect>
@@ -56,7 +59,7 @@
                             </svg>
                             <span class="top-cart-number">3</span>
                         </a>
-                    </div>
+                    </div> #}
                     <!-- #top-cart end -->
 
                 </div>
@@ -104,7 +107,8 @@
                 <nav class="primary-menu with-arrows order-lg-1 order-last px-0">
 
                     <ul class="menu-container">
-                        <li class="menu-item current">
+                        
+                        {# <li class="menu-item current">
                             <a class="menu-link" href="demo-furniture.html">
                                 <div>Home</div>
                             </a>
@@ -121,13 +125,14 @@
                                 </li>
                             </ul>
                         </li>
+                        
                         <li class="menu-item mega-menu mega-menu-full">
                             <a href="demo-furniture-products.html" class="menu-link">
                                 <div>Shop</div>
                             </a>
 
                             <!-- Menu DropDown
-                                                                                ============================================= -->
+                                ============================================= -->
                             <div class="mega-menu-content border-bottom-0">
                                 <div class="container">
                                     <div class="row">
@@ -241,6 +246,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="menu-item">
                             <a class="menu-link" href="demo-furniture-about.html">
                                 <div>About Us</div>
@@ -250,7 +256,16 @@
                             <a class="menu-link" href="demo-furniture-contact.html">
                                 <div>Contact</div>
                             </a>
-                        </li>
+                        </li> #}
+                        
+                        {% for menu in settings.menus %}
+                            <li class="menu-item {% if current_path == menu.contentlink %} current {% endif %}">
+                                <a class="menu-link" href="{{ menu.contentlink|e }}">
+                                    <div>{{ menu.title }}</div>
+                                </a>
+                            </li>
+                        {% endfor %}
+
                     </ul>
 
                 </nav>
