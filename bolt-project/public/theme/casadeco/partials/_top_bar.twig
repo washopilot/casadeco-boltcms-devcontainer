@@ -1,22 +1,27 @@
-<!-- Top Bar
-            ============================================= -->
-<div id="top-bar" class="py-3 text-center bg-color-light">
-    <div class="container clearfix">
-        <div class="d-md-flex justify-content-md-between align-items-md-center">
-            <h4 class="mb-2 mb-md-0 h6 fw-normal">{{ 'Free Shipping on every order' }}
-                {# <span class="mx-2 text-black-50">&middot;</span> #}
+{% setcontent settings = 'ajustes' %}
+
+{% if settings.top_bar.visible %}
+
+    <!-- Top Bar
+                ============================================= -->
+    <div id="top-bar" class="py-3 text-center bg-color-light">
+        <div class="container clearfix">
+            <div class="d-md-flex justify-content-md-between align-items-md-center">
+                <h4 class="mb-2 mb-md-0 h6 fw-normal">{{ settings.top_bar.title }}
+                    {# <span class="mx-2 text-black-50">&middot;</span> #}
                 </h4>
 
-            <h4 class="mb-0 h6 fw-normal">{{ 'Need Help? Call us at' }}
+                {# <h4 class="mb-0 h6 fw-normal">{{ 'Need Help? Call us at' }} #}
                 {# <a class="color" href="tel:+00-11-22-7541">
-                    <u class="fw-medium">+00-11-22-7541</u>
-                </a>
-                or
-                <a class="color" href="mailto:noreply@canvas.com">
-                    <u class="fw-medium">email</u>
-                </a> #}
-                </h4>
+                                    <u class="fw-medium">+00-11-22-7541</u>
+                                </a>
+                                or
+                                <a class="color" href="mailto:noreply@canvas.com">
+                                    <u class="fw-medium">email</u>
+                                </a> #}
+            </h4>
         </div>
     </div>
 </div>
 <!-- #top-bar end -->
+{% endif %}

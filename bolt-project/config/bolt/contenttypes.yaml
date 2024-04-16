@@ -262,7 +262,7 @@ homepage:
 #     icon_many: "fa:gifts"
 #     icon_one: "fa:gift"
 
-categorias: 
+categorias:
     name: Categorias
     singular_name: Categoria
     fields:
@@ -365,8 +365,8 @@ productos:
         categorias:
             multiple: true
             required: true
-            label: 'Seleccione una o más categorías'
-            format: '{title} (№ {id})'
+            label: "Seleccione una o más categorías"
+            format: "{title} (№ {id})"
             order: -id
     show_on_dashboard: true
     # taxonomy: etiquetas
@@ -387,20 +387,20 @@ ajustes:
             type: text
             class: large
             variant: inline
-            label: 'Nombre de la empresa'
-            group: 'Datos generales'
+            label: "Nombre de la empresa"
+            group: "Datos generales"
         address:
             type: text
             variant: inline
-            label: 'Dirección'
+            label: "Dirección"
         phone:
             type: text
             variant: inline
-            label: 'Texto Teléfono'
+            label: "Texto Teléfono"
         phone_number:
             type: text
             variant: inline
-            label: 'Teléfono (sólo número)'
+            label: "Teléfono (sólo número)"
         email:
             type: text
             variant: inline
@@ -425,7 +425,17 @@ ajustes:
                     fields:
                         title:
                             type: select
-                            values: [facebook, instagram, youtube, linkedin, twitter, pinterest, whatsapp, tiktok]
+                            values:
+                                [
+                                    facebook,
+                                    instagram,
+                                    youtube,
+                                    linkedin,
+                                    twitter,
+                                    pinterest,
+                                    whatsapp,
+                                    tiktok,
+                                ]
                             class: large
                             label: Título de la red social
                             group: Social
@@ -433,8 +443,8 @@ ajustes:
                         contentlink:
                             type: text
                             label: Link
-                            placeholder: 'https://example.org/'
-                            postfix: 'Use este campo para añadir los enlaces o URL de la red social seleccionada.'
+                            placeholder: "https://example.org/"
+                            postfix: "Use este campo para añadir los enlaces o URL de la red social seleccionada."
                             required: true
         menus:
             type: collection
@@ -455,19 +465,32 @@ ajustes:
                             type: text
                             label: Enlace
                             variant: inline
-                            placeholder: 'contenttype/slug or http://example.org/'
+                            placeholder: "contenttype/slug or http://example.org/"
                             postfix: |
                                 Utilícese para añadir un enlace al menú. Este puede ser 'interno'
                                 como <tt>page/about</tt>, si usted utiliza una combinación contenttype/slug.
                                 De otra manera utilice un URL apropiado, como `http://example.org`.
+        top_bar:
+            type: set
+            group: Barra superior
+            fields:
+                visible:
+                    type: checkbox
+                    label: Visible
+                    mode: switch
+                    variant: inline
+                title:
+                    type: text
+                    variant: inline
+                    label: Texto informativo
+                    required: true
     viewless: true
     singleton: true
     show_on_dashboard: false
     default_status: published
     sort: -id
-    icon_many: 'fa:cogs'
-    icon_one: 'fa:cog'
-
+    icon_many: "fa:cogs"
+    icon_one: "fa:cog"
 # Possible field types:
 #
 # text - varchar(256) - input type text.
