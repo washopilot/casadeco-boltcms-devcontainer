@@ -87,6 +87,10 @@ homepage:
                             type: text
                             label: Título de sección
                             variant: inline
+                        subtitle:
+                            type: text
+                            label: Subtítulo de sección
+                            variant: inline
                         box_1_title:
                             type: text
                             label: Título Caja_1
@@ -113,7 +117,31 @@ homepage:
                             variant: inline
                     default:
                         visible: 1
-
+                shop_section:
+                    type: set
+                    label: "Sección Galería"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        title:
+                            type: text
+                            label: Título de sección
+                            variant: inline
+                        subtitle:
+                            type: text
+                            label: Subtítulo de sección
+                            variant: inline
+                        boxes:
+                            type: number
+                            label: "Miniaturas"
+                            variant: inline
+                            postfix: Colocar aquí el máximo número de minuaturas a mostrar
+                    default:
+                        visible: 1
+                        boxes: 6
         slug:
             type: slug
             uses: title

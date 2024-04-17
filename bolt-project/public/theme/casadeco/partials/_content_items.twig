@@ -49,6 +49,11 @@
                             <a class="dropdown-item" href="{{ path('record', {'contentTypeSlug': 'categorias', 'slugOrId': category.slug }) }}">{{ category|title|capitalize }}</a>
                             {% endfor %}
                         </div>
+                        {% if content is defined and content.contenttype == 'categorias' %}
+                            <a href="{{ path('listing', { 'contentTypeSlug': 'productos'} ) }}" class="button button-border m-0 button-dark border-width-1 border-default nott ls0 fw-normal h-bg-color">
+                            <i class="icon-line-grid"></i>
+                            Mirar todos</a>
+                        {% endif %}
                     </div>
 
                     {# <div class="dropdown sortbuttons ms-2">

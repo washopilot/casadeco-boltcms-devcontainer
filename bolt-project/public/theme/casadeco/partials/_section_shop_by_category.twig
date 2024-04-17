@@ -1,6 +1,7 @@
 {% setcontent categories = 'categorias' %}
+{% set block = (content) %}
 
-
+{% if block.visible == 1 %}
 <!-- 2. Section Shop by Category
 ============================================= -->
 <div
@@ -8,9 +9,9 @@
 
     <!-- Heading Title -->
     <div class="text-center mt-6 mb-5">
-        <h2 class="h1 fw-normal mb-4">Mirar por
+        <h2 class="h1 fw-normal mb-4">{{ block.title }}
             <span data-animate="svg-underline-animated" class="svg-underline nocolor">
-                <span>Categoría</span>
+                <span>{{ block.subtitle }}</span>
             </span>
         </h2>
         <a href="{{ path('listing', { 'contentTypeSlug': 'productos'} ) }}" class="button button-small button-border m-0 button-dark border-width-1 border-default px-4 h-bg-color">
@@ -20,7 +21,7 @@
 
     <!-- Categories -->
     <div class="row item-categories gutter-20">
-        {% set loop_limit = 6 %}
+        {% set loop_limit = block.boxes %}
         {% for category in categories %}
             {% if loop.index > loop_limit %}
                 {% break %}
@@ -62,3 +63,4 @@
 
 </div>
 <!-- Section End -->
+{% endif %}

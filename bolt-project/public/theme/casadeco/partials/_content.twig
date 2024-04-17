@@ -10,7 +10,7 @@
         {% endif %}
 
         {% if block.name == 'shop_section' %}
-            {% include 'partials/_section_shop_by_category.twig' %}
+            {% include 'partials/_section_shop_by_category.twig' with { content: block } %}
         {% endif %}
 
         {% if block.name == 'new_section' %}
