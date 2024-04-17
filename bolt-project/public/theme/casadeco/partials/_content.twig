@@ -1,20 +1,33 @@
-{% dump(section) %}
+{% set block = (content) %}
+
 <!-- Content
 ============================================= -->
 <section id="content">
     <div class="content-wrap py-0">
 
-        {% include 'partials/_section_why.twig' %}
+        {% if block.name == 'why_section' %}
+            {% include 'partials/_section_why.twig' with { content: block } %}
+        {% endif %}
 
-        {% include 'partials/_section_shop_by_category.twig' %}
+        {% if block.name == 'shop_section' %}
+            {% include 'partials/_section_shop_by_category.twig' %}
+        {% endif %}
 
-        {% include 'partials/_section_new_arrivals.twig' %}
+        {% if block.name == 'new_section' %}
+            {% include 'partials/_section_new_arrivals.twig' %}
+        {% endif %}
 
-        {% include 'partials/_section_explore.twig' %}
+        {% if block.name == 'explore_section' %}
+            {% include 'partials/_section_explore.twig' %}
+        {% endif %}
 
-        {% include 'partials/_section_fetured.twig' %}
+        {% if block.name == 'fetured_section' %}
+            {% include 'partials/_section_fetured.twig' %}
+        {% endif %}
 
-        {% include 'partials/_section_instagram.twig' %}
+        {% if block.name == 'instagram_section' %}
+            {% include 'partials/_section_instagram.twig' %}
+        {% endif %}
 
     </div>
 </section>

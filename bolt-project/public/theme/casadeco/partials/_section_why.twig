@@ -1,13 +1,15 @@
+{% set block = (content) %}
+
 <!-- 1. Section Why Choose Us
 ============================================= -->
 <div class="section bg-color-light mt-0">
     <div class="container text-center mw-md topmargin bottommargin">
 
-        <h2 class="display-4 fw-normal">Why
+        <h2 class="display-4 fw-normal">
             <span data-animate="svg-underline-animated" class="svg-underline nocolor">
-                <span>Choose</span>
+                <span>{{ block.title }}</span>
             </span>
-            Us?</h2>
+            </h2>
 
         <div class="clear"></div>
 
@@ -27,8 +29,8 @@
                         </svg>
                     </div>
                     <div class="fbox-content">
-                        <h2 class="nott fw-medium h4 mb-4">Woldwide Brand</h2>
-                        <p class="">Powerful Layout with Responsive functionality that can be adapted to any screen size. Resize browser to view.</p>
+                        <h2 class="nott fw-medium h4 mb-4">{{ block.box_1_title|upper }}</h2>
+                        <p class="">{{ block.box_1_subtitle }}</p>
                     </div>
                 </div>
             </div>
@@ -47,8 +49,8 @@
                         </svg>
                     </div>
                     <div class="fbox-content">
-                        <h2 class="nott fw-medium h4 mb-4">Award Winner</h2>
-                        <p class="">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Retina Icons, Fonts &amp; all others graphics are optimized.</p>
+                        <h2 class="nott fw-medium h4 mb-4">{{ block.box_2_title|upper }}</h2>
+                        <p class="">{{ block.box_2_subtitle }}</p>
                     </div>
                 </div>
             </div>
@@ -66,8 +68,8 @@
                         </svg>
                     </div>
                     <div class="fbox-content">
-                        <h2 class="nott fw-medium h4 mb-4">Happily Service</h2>
-                        <p class="">Canvas includes tons of optimized code that are completely customizable and deliver unmatched fast performance.</p>
+                        <h2 class="nott fw-medium h4 mb-4">{{ block.box_3_title|upper }}</h2>
+                        <p class="">{{ block.box_3_subtitle }}</p>
                     </div>
                 </div>
             </div>

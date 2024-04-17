@@ -59,19 +59,58 @@ homepage:
                             label: Texto_3
                         image_bk:
                             type: image
-                            label: 'Imagen Fondo'
+                            label: "Imagen Fondo"
                             alt: false
                         button_title:
                             type: text
                             variant: inline
-                            label: 'Mensaje en botón'
+                            label: "Mensaje en botón"
                             postfix: |
                                 Dejar en blanco para no mostrar botón
                         button_link:
                             type: text
-                            label: 'Enlace en botón'
+                            label: "Enlace en botón"
                             variant: inline
                             postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+                    default:
+                        visible: 1
+                why_section:
+                    type: set
+                    label: "Sección Por Qué"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        title:
+                            type: text
+                            label: Título de sección
+                            variant: inline
+                        box_1_title:
+                            type: text
+                            label: Título Caja_1
+                            variant: inline
+                        box_1_subtitle:
+                            type: text
+                            label: Subtítulo Caja_1
+                            variant: inline
+                        box_2_title:
+                            type: text
+                            label: Título Caja_2
+                            variant: inline
+                        box_2_subtitle:
+                            type: text
+                            label: Subtítulo Caja_2
+                            variant: inline
+                        box_3_title:
+                            type: text
+                            label: Título Caja_3
+                            variant: inline
+                        box_3_subtitle:
+                            type: text
+                            label: Subtítulo Caja_3
+                            variant: inline
                     default:
                         visible: 1
 
