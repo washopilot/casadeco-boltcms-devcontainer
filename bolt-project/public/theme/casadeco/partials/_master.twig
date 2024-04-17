@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="{{ htmllang() }}">
     <head>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -31,7 +31,15 @@
         <!-- / -->
 
         <!-- Document Title ============================================= -->
-        <title>Furniture | Canvas</title>
+        <title>
+        {%- if record|default and record.title -%}
+        {{- record.title|capitalize ~ ' | ' -}}
+        {%- endif -%}
+        {{- config.get('general/sitename') -}}
+        {%- if record|default == null and config.has('general/payoff') -%}
+        {{- ' | ' ~ config.get('general/payoff') -}}
+        {%- endif -%}
+        </title>
 
     </head>
 

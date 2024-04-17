@@ -142,6 +142,19 @@ homepage:
                     default:
                         visible: 1
                         boxes: 6
+                new_arrivals_section:
+                    type: set
+                    label: "Sección Nuevos arribos"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        title:
+                            type: text
+                            label: Título de sección
+                            variant: inline
         slug:
             type: slug
             uses: title

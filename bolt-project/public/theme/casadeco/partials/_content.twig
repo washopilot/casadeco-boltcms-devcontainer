@@ -13,7 +13,7 @@
             {% include 'partials/_section_shop_by_category.twig' with { content: block } %}
         {% endif %}
 
-        {% if block.name == 'new_section' %}
+        {% if block.name == 'new_arrivals_section' %}
             {% include 'partials/_section_new_arrivals.twig' %}
         {% endif %}
 
@@ -25,9 +25,9 @@
             {% include 'partials/_section_fetured.twig' %}
         {% endif %}
 
-        {% if block.name == 'instagram_section' %}
+        {# {% if block.name == 'instagram_section' %}
             {% include 'partials/_section_instagram.twig' %}
-        {% endif %}
+        {% endif %} #}
 
     </div>
 </section>
