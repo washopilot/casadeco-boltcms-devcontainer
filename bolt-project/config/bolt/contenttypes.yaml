@@ -155,6 +155,16 @@ homepage:
                             type: text
                             label: Título de sección
                             variant: inline
+                        subtitle:
+                            type: text
+                            label: Subtítulo de sección
+                            variant: inline
+                        description:
+                            type: text
+                            label: Descripción
+                            variant: inline
+                    default:
+                        visible: 1
         slug:
             type: slug
             uses: title

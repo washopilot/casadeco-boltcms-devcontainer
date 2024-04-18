@@ -14,7 +14,7 @@
         {% endif %}
 
         {% if block.name == 'new_arrivals_section' %}
-            {% include 'partials/_section_new_arrivals.twig' %}
+            {% include 'partials/_section_new_arrivals.twig' with { content: block } %}
         {% endif %}
 
         {% if block.name == 'explore_section' %}

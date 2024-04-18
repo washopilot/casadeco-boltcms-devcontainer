@@ -1,3 +1,7 @@
+{% set block = (content) %}
+{% setcontent products = 'productos' limit 3 latest returnmultiple %}
+
+{% if block.visible == 1 %}
 <!-- 3. Section new Arrivals
 ============================================= -->
 <div class="section custom-bg mt-3 mb-0" style="--custom-bg: #F3F3ED; padding: 100px 0;">
@@ -11,22 +15,23 @@
 
             <!-- Title -->
             <div class="col-xl-3 col-lg-6">
-                <h3 class="mb-4 fw-normal h1">New
+                <h3 class="mb-4 fw-normal h1">{{ block.title }}
                     <span data-animate="svg-underline-animated" class="svg-underline nocolor">
-                        <span>Arrivals</span>
+                        <span>{{ block.subtitle }}</span>
                     </span>
                 </h3>
-                <p class="op-07 mb-4">Compellingly cultivate synergistic infrastructures rather than fully tested opportunities. Synergistically evisculate web-enabled interfaces.</p>
-                <a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">New Arrivals</a>
-                <a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">Popular</a>
+                <p class="op-07 mb-4">{{ block.description }}</p>
+                <a href="{{ path('listing', { 'contentTypeSlug': 'productos'} ) }}" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color"><i class="icon-line-grid"></i>Mirar Todos</a>
+                {# <a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">Popular</a> #}
             </div>
 
+            {% for product in products %}
             <!-- Product 1 -->
             <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
                 <div class="grid-inner">
                     <div class="product-image">
-                        <a href="demo-forum-single.html"><img src="demos/furniture/images/shop/2.jpg" alt="Light Grey Sofa"></a>
-                        <a href="demo-forum-single.html"><img src="demos/furniture/images/shop/2-1.jpg" alt="Light Grey Sofa"></a>
+                        <a href="demo-forum-single.html"><img src="{{ product|image|thumbnail(640, 800, fit='crop') }}" alt="{{ product|image.alt|default() }}"></a>
+                        <a href="demo-forum-single.html"><img src="{{ product.image_hover|thumbnail(640, 800, fit='crop') }}" alt="{{ product.image_hover.alt|default() }}"></a>
                         <div class="bg-overlay">
                             <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
                                 <a href="#" class="btn btn-light me-2">
@@ -41,15 +46,16 @@
                     <div class="product-desc">
                         <div class="product-title mb-0">
                             <h4 class="mb-0">
-                                <a class="fw-medium" href="demo-forum-single.html">Light Grey Sofa</a>
+                                <a class="fw-medium" href="demo-forum-single.html">{{ product|title }}</a>
                             </h4>
                         </div>
-                        <h5 class="product-price fw-normal">$799.99</h5>
+                        <h5 class="product-price fw-normal">${{ product.price }}</h5>
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
-            <!-- Product 2 -->
+            {# <!-- Product 2 -->
             <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
                 <div class="grid-inner">
                     <div class="product-image">
@@ -103,9 +109,9 @@
                         <h5 class="product-price fw-normal">$24.99</h5>
                     </div>
                 </div>
-            </div>
+            </div> #}
 
-            <!-- Product 4 -->
+            {# <!-- Product 4 -->
             <div class="product col-lg-3 col-md-4 col-sm-6 col-12">
                 <div class="grid-inner">
                     <div class="product-image">
@@ -213,7 +219,7 @@
                         <h5 class="product-price fw-normal">$29.99</h5>
                     </div>
                 </div>
-            </div>
+            </div> #}
 
         </div>
         <!-- #shop end -->
@@ -221,3 +227,4 @@
     </div>
 </div>
 <!-- Section End -->
+{% endif %}
