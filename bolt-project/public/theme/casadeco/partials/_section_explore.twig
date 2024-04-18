@@ -1,3 +1,6 @@
+{% set block = (content) %}
+
+{% if block.visible == 1 %}
 <!-- 4. Section Explore your Home & Office
 ============================================= -->
 <div class="container-fluid">
@@ -6,21 +9,17 @@
         class="row align-items-lg-center col-mb-30">
 
         <!-- Image -->
-        <div class="col-xl-8 col-lg-6 px-lg-0 min-vh-50 min-vh-lg-75" style="background: url('demos/furniture/images/section.jpg') no-repeat center center; background-size: cover;"></div>
+        <div class="col-xl-8 col-lg-6 px-lg-0 min-vh-50 min-vh-lg-75" style="background: url('{{ block.image|thumbnail(1400, 900, fit='crop') }}') no-repeat center center; background-size: cover;"></div>
 
         <!-- Content -->
         <div class="col-xl-4 col-lg-6 px-lg-5 py-5">
-            <h3 class="h1 mb-4 fw-normal">Explore your
+            <h3 class="h1 mb-4 fw-normal">{{ block.title }}
                 <span data-animate="svg-underline-animated" class="svg-underline nocolor">
-                    <span>Home</span>
+                    <span>{{ block.subtitle }}</span>
                 </span>
-                &
-                <span data-animate="svg-underline-animated" data-delay="300" class="svg-underline nocolor">
-                    <span>Office</span>
-                </span>
-                with our Furnitures</h3>
-            <p>Compellingly cultivate synergistic infrastructures rather than fully tested opportunities. Synergistically evisculate web-enabled interfaces for market positioning web services. Continually create business infomediaries and interdependent products.</p>
-            <a href="demo-forum-about.html" class="button button-border m-0 button-dark border-width-1 border-default h-bg-color">Discover Now
+                </h3>
+            <p>{{ block.description }}</p>
+            <a href="demo-forum-about.html" class="button button-border m-0 button-dark border-width-1 border-default h-bg-color">Mirar todos
                 <i class="icon-long-arrow-right"></i>
             </a>
         </div>
@@ -28,3 +27,4 @@
 
 </div>
 <!-- Section End -->
+{% endif %}

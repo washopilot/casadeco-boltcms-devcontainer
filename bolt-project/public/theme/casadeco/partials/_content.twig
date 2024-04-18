@@ -18,7 +18,7 @@
         {% endif %}
 
         {% if block.name == 'explore_section' %}
-            {% include 'partials/_section_explore.twig' %}
+            {% include 'partials/_section_explore.twig' with { content: block } %}
         {% endif %}
 
         {% if block.name == 'fetured_section' %}

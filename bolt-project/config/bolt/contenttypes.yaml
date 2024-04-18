@@ -165,6 +165,33 @@ homepage:
                             variant: inline
                     default:
                         visible: 1
+                explore_section:
+                    type: set
+                    label: "Sección Explorar"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        title:
+                            type: text
+                            label: Título de sección
+                            variant: inline
+                        subtitle:
+                            type: text
+                            label: Subtítulo de sección
+                            variant: inline
+                        description:
+                            type: text
+                            label: Descripción
+                            variant: inline
+                        image:
+                            type: image
+                            label: Imagen
+                            alt: false
+                    default:
+                        visible: 1
         slug:
             type: slug
             uses: title
