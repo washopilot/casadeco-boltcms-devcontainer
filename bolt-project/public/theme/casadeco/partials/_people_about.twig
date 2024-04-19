@@ -1,4 +1,5 @@
 {% set block = (content) %}
+{% setcontent people = 'personal' %}
 
 {% if block.visible == 1 %}
 <!-- 2. Section
@@ -8,11 +9,12 @@
 
         <div class="clear"></div>
 
+        {% for person in people.personal_collection %}
         <!-- 1 -->
         <div
-            class="row align-items-md-center">
+            class="row align-items-md-center {% if loop.index is even %}flex-md-row-reverse{% endif %}">
             <!-- Image -->
-            <div class="col-md-6 px-lg-0 min-vh-50 min-vh-lg-75 d-flex align-self-stretch" style="background: url('demos/furniture/images/about/1.jpg') no-repeat center center; background-size: cover;"></div>
+            <div class="col-md-6 px-lg-0 min-vh-50 min-vh-lg-75 d-flex align-self-stretch" style="background: url('{{ person.persona_image|thumbnail(680, 572, fit='fill') }}') no-repeat center center; background-size: cover;"></div>
 
             <!-- Content -->
             <div class="col-md-6 p-5 p-lg-6">
@@ -22,8 +24,9 @@
         </div>
 
         <div class="clear"></div>
+        {% endfor %}
 
-        <!-- 2 -->
+        {# <!-- 2 -->
         <div
             class="row flex-md-row-reverse align-items-md-center">
             <!-- Image -->
@@ -64,7 +67,7 @@
                 <h3 class="h3 bottommargin fw-medium px-lg-5">4. 30 Days Return Policy</h3>
                 <p class="m-0 px-lg-5">Continually aggregate scalable metrics for vertical paradigms. Rapidiously pontificate low-risk high-yield web-readiness via ethical e-business. Phosfluorescently actualize 24/365 architectures rather than multimedia based leadership skills. Collaboratively embrace go.</p>
             </div>
-        </div>
+        </div> #}
 
     </div>
 </div>
