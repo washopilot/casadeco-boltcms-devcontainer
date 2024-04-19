@@ -534,10 +534,20 @@ acerca:
     name: Acerca
     singular_name: Acerca
     fields:
-        title:
-            type: text
-            variant: inline
-            label: Título
+        sections_about:
+            type: collection
+            group: Secciones
+            label: Secciones
+            fields:
+                hero_section:
+                    type: set
+                    label: "Sección Portada"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
     viewless: false
     record_template: about.twig
     singleton: true
