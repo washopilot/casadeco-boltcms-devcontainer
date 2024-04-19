@@ -534,9 +534,13 @@ acerca:
     name: Acerca
     singular_name: Acerca
     fields:
+        title:
+            type: text
+            variant: inline
+            label: Título
+            group: Secciones
         sections_about:
             type: collection
-            group: Secciones
             label: Secciones
             fields:
                 hero_section:
@@ -548,6 +552,41 @@ acerca:
                             label: Visible
                             mode: switch
                             variant: inline
+                    default:
+                        visible: 1
+                boxes_section:
+                    type: set
+                    label: "Sección Cajas"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                    default:
+                        visible: 1
+                people_section:
+                    type: set
+                    label: "Sección Personal"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                    default:
+                        visible: 1
+                faq_section:
+                    type: set
+                    label: "Sección Preguntas Frecuentes"
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                    default:
+                        visible: 1
     viewless: false
     record_template: about.twig
     singleton: true

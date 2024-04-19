@@ -1,3 +1,6 @@
+{% set block = (content) %}
+
+{% if block.visible == 1 %}
 <!-- 1. Section
     ============================================= -->
 <div class="section custom-bg my-0" style="--custom-bg: #FAF8F0;">
@@ -72,3 +75,4 @@
     </div>
 </div>
 <!-- Section End -->
+{% endif %}

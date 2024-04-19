@@ -1,13 +1,21 @@
+{% set block = (content) %}
+
 <!-- Content
 ============================================= -->
 <section id="content">
     <div class="content-wrap py-0">
 
-        {% include 'partials/_boxes_about.twig' %}
+        {% if block.name == 'boxes_section' %}
+            {% include 'partials/_boxes_about.twig' with { content: block } %}
+        {% endif %}
 
-        {% include 'partials/_people_about.twig' %}
+        {% if block.name == 'people_section' %}
+            {% include 'partials/_people_about.twig' with { content: block } %}
+        {% endif %}
 
-        {% include 'partials/_faq_about.twig' %}
+        {% if block.name == 'faq_section' %}
+            {% include 'partials/_faq_about.twig' with { content: block } %}
+        {% endif %}
 
     </div>
 </section>

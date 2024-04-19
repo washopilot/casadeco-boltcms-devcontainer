@@ -1,9 +1,15 @@
 {% extends 'partials/_master.twig' %}
 
 {% block main %}
-    {% include 'partials/_hero_about.twig' %}
 
-    {% include 'partials/_content_about.twig' %}
+    {% for section in record.sections_about %}
 
+        {% if section.name == 'hero_section' %}
+            {% include 'partials/_hero_about.twig' with { content: section } %}
+        {% endif %}
+
+        {% include 'partials/_content_about.twig' with { content: section } %}
+
+    {% endfor %}
 
 {% endblock main %}
