@@ -552,6 +552,18 @@ acerca:
                             label: Visible
                             mode: switch
                             variant: inline
+                        title:
+                            type: text
+                            label: Título de sección
+                            variant: inline
+                        subtitle:
+                            type: text
+                            label: Subtítulo de sección
+                            variant: inline
+                        image:
+                            type: image
+                            label: Imagen
+                            alt: false
                     default:
                         visible: 1
                 boxes_section:
@@ -562,6 +574,30 @@ acerca:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
+                        box_1_title:
+                            type: text
+                            label: Título Caja_1
+                            variant: inline
+                        box_1_subtitle:
+                            type: text
+                            label: Subtítulo Caja_1
+                            variant: inline
+                        box_2_title:
+                            type: text
+                            label: Título Caja_2
+                            variant: inline
+                        box_2_subtitle:
+                            type: text
+                            label: Subtítulo Caja_2
+                            variant: inline
+                        box_3_title:
+                            type: text
+                            label: Título Caja_3
+                            variant: inline
+                        box_3_subtitle:
+                            type: text
+                            label: Subtítulo Caja_3
                             variant: inline
                     default:
                         visible: 1
@@ -574,6 +610,12 @@ acerca:
                             label: Visible
                             mode: switch
                             variant: inline
+                        helpful_tip:
+                            type: text
+                            class: d-none
+                            label: "Tip"
+                            postfix: |
+                                Modificar en Auxiliares > Personal
                     default:
                         visible: 1
                 faq_section:
@@ -590,6 +632,40 @@ acerca:
     viewless: false
     record_template: about.twig
     singleton: true
+    icon_many: "fa:user"
+    icon_one: "fa:user"
+
+personal:
+    name: Personal
+    singular_name: Persona
+    show_in_menu: Auxiliares
+    fields:
+        personal_collection:
+            type: collection
+            label: Personal
+            limit: 5
+            fields:
+                persona_set:
+                    type: set
+                    label: Persona
+                    fields:
+                        persona_title:
+                            type: text
+                            label: Título
+                            variant: inline
+                        persona_subtitle:
+                            type: text
+                            label: Subtítulo
+                            variant: inline
+                        persona_image:
+                            type: image
+                            label: Imagen
+                            alt: false
+    singleton: true
+    show_on_dashboard: false
+    default_status: published
+    viewless: true
+    sort: -id
     icon_many: "fa:users"
     icon_one: "fa:user"
 
