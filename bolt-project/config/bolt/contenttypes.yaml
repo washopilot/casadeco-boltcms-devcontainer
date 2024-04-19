@@ -30,7 +30,6 @@ homepage:
             placeholder: "contentType/slug or https://example.org/"
             postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
             fixture_format: "{url}"
-
         sections_home:
             type: collection
             group: Secciones
@@ -444,7 +443,6 @@ categorias:
             type: slug
             uses: title
     show_on_dashboard: true
-    # taxonomy: etiquetas
     viewless: false
     default_status: published
     searchable: false
@@ -515,14 +513,6 @@ productos:
             variant: inline
             default: 100
             required: true
-        # categories:
-        #     type: select
-        #     group: 'Categorías'
-        #     label: 'Selecciones las categorías'
-        #     values: categorias/{title} (№ {id})
-        #     multiple: true
-        #     order: -id
-        #     required: true
     relations:
         categorias:
             multiple: true
@@ -531,7 +521,6 @@ productos:
             format: "{title} (№ {id})"
             order: -id
     show_on_dashboard: true
-    # taxonomy: etiquetas
     viewless: false
     default_status: published
     searchable: false
@@ -540,6 +529,20 @@ productos:
     listing_records: 1
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
+
+acerca:
+    name: Acerca
+    singular_name: Acerca
+    fields:
+        title:
+            type: text
+            variant: inline
+            label: Título
+    viewless: false
+    record_template: about.twig
+    singleton: true
+    icon_many: "fa:users"
+    icon_one: "fa:user"
 
 ajustes:
     name: Ajustes
