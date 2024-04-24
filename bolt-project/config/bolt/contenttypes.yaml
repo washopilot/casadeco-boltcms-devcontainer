@@ -629,6 +629,10 @@ acerca:
                             variant: inline
                     default:
                         visible: 1
+        slug:
+            type: slug
+            uses: title
+            group: Meta
     viewless: false
     record_template: about.twig
     singleton: true
