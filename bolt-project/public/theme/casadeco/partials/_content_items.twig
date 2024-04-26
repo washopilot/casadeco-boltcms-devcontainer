@@ -10,7 +10,7 @@
             <div class="row justify-content-between align-items-center">
                 
                 {% if contenttype is defined and contenttype == 'productos' %}
-                {% setcontent records = (contenttype) limit 2 returnmultiple %}
+                {% setcontent records = (contenttype) limit 2 returnmultiple orderby 'sort' %}
                 <div class="col-auto mb-4">
                     <h3 class="fw-medium h1">Todos los
                         <span data-animate="svg-underline-animated" class="svg-underline nocolor">
@@ -24,7 +24,7 @@
                 {% if content is defined and content.contenttype == 'categorias' %}
                 {% set records_related = content|related %}
                 {% set ids = records_related|map(v => v.id) %}
-                {% setcontent records = 'productos' where {id: ids|join(' || ')} limit 1 returnmultiple %}
+                {% setcontent records = 'productos' where {id: ids|join(' || ')} limit 1 returnmultiple orderby 'sort' %}
                 <div class="col-auto mb-4">
                     <h3 class="fw-medium h1">Resultados para: 
                         <span data-animate="svg-underline-animated" class="svg-underline nocolor">
