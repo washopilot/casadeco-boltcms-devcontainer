@@ -1,0 +1,19 @@
+services:
+    Eckinox\BoltNavigationUI\ExtensionMenu:
+        class: Eckinox\BoltNavigationUI\ExtensionMenu
+        arguments: [ '@Symfony\Component\Routing\Generator\UrlGeneratorInterface', '@Symfony\Contracts\Translation\TranslatorInterface' ]
+        tags: [ 'bolt.extension_backend_menu' ]
+
+    Eckinox\BoltNavigationUI\Utils\Search\NavigationContentSearch:        
+        arguments:
+            - '@Bolt\Configuration\Config'
+            - '@Bolt\Repository\ContentRepository'
+            - '@Bolt\Twig\ContentExtension'
+            - '@Symfony\Component\Routing\RouterInterface'
+            - '@Symfony\Component\String\Slugger\SluggerInterface'
+            - '%locale%'
+
+framework:
+    translator:
+        paths:
+            - '%kernel.project_dir%/vendor/eckinox/bolt-navigation-ui/translations'

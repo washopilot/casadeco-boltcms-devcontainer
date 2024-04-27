@@ -76,5 +76,8 @@ CMD \
 	rm -rf vendor && rm -rf public/assets && rm -rf public/bundles && \
 	rm -rf var/cache && rm -rf var/log && rm -rf public/thumbs/* && \
 	composer install --prefer-dist --no-progress --no-suggest --ignore-platform-reqs && \
+	composer require eckinox/bolt-navigation-ui --prefer-dist --no-progress --no-suggest --ignore-platform-reqs && \
 	composer clear-cache && \
+	cp -f bkup-fix/Extension.php vendor/eckinox/bolt-navigation-ui/src/Extension.php && \
+	cp -f bkup-fix/extension_bolt-navigation-ui.yaml config/packages/extension_bolt-navigation-ui.yaml && \
 	apache2-foreground
