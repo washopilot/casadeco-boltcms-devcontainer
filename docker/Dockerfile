@@ -61,12 +61,12 @@ ARG uid
 ARG gid
 
 # Create a new group with the specified GID
-RUN groupadd -g $gid newgroup
+RUN groupadd -g $gid devuser
 
 # Create a user and assign the UID and GID
-RUN useradd -G www-data,root,newgroup -u $uid -g $gid -d /home/devuser devuser && \
+RUN useradd -G www-data,root,devuser -u $uid -g $gid -d /home/devuser devuser && \
 	mkdir -p /home/devuser/.composer && \
-	chown -R devuser:newgroup /home/devuser
+	chown -R devuser:devuser /home/devuser
 
 # Set devuser as the default user when running the container
 USER devuser
